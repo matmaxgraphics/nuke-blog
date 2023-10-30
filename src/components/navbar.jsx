@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import nukeLogo from "../assets/nuke-logo.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -12,12 +13,12 @@ export default function Navbar() {
     <nav className={mobileNavOpen ? "mobile-open" : ""}>
       <div className="nav-content">
         <div className="logo-container">
-          <a href={`/`}><img src={nukeLogo} alt="logo for nuke blog" className="blog-logo" /></a>
+          <Link to='/'><img src={nukeLogo} alt="logo for nuke blog" className="blog-logo" /></Link>
         </div>
         <div className="nav-links">
           <ul className={`nav-links ${mobileNavOpen ? "mobile-open" : ""}`}>
             <li>
-              <a href={`all-articles`}>Articles</a>
+              <Link to='/all-articles'>Articles</Link>
             </li>
             <li>
               <a href="">Categories</a>
@@ -26,7 +27,7 @@ export default function Navbar() {
               <a href="">About</a>
             </li>
             <li>
-              <a href={`contact-page`}>Contact</a>
+              <Link to='/contact-page'>Contact</Link>
             </li>
           </ul>
         </div>

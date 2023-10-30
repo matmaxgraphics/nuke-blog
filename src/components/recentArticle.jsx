@@ -24,7 +24,7 @@ const RecentArticle = () => {
         </article>
 
         <article className="blog-card--container">
-          <a href={`single-article`}>
+          <Link to='/single-article'>
             <img src={img1} alt="" className="blog-display--image" />
             <div className="blog-details">
               <small className="blog-upload--date">SEPTEMBER 06, 2022</small>
@@ -32,7 +32,7 @@ const RecentArticle = () => {
                 Everyday lifestyle of different activities
               </h4>
             </div>
-          </a>
+          </Link>
         </article>
 
         <article className="blog-card--container">
@@ -60,14 +60,14 @@ const RecentArticle = () => {
         </article>
       </main>
       <button className="read--more_btn link--button">
-        <a href={`all-articles`}>
+        <Link to='/all-articles'>
           <span>Explore more articles </span>{" "}
           <img
             src={arrowIcon}
             alt="arrow icon with read article button"
             className="cta-icon"
           />
-        </a>
+        </Link>
       </button>
     </section>
   );

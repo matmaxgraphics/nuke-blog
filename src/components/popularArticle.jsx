@@ -22,14 +22,14 @@ const PopularArticle = () => {
               Two hundred? Probably not.
             </p>
             <button className="read--more_btn link--button">
-              <a href={`single-article`}>
+              <Link to='/single-article'>
                 <span>Read Article </span>{" "}
                 <img
                   src={arrowIcon}
                   alt="arrow icon with read article button"
                   className="cta-icon"
                 />
-              </a>
+              </Link>
             </button>
           </div>
         </article>
