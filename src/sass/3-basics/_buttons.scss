@@ -1,0 +1,37 @@
+.read--more_btn{
+    background-color: transparent;
+    border: unset;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    span{
+        margin-right: 8px;
+        transition: $transitionDuration;
+        text-decoration: underline;
+        &:hover{
+            margin-right: 4px;
+            transition: $transitionDuration;
+        }
+    }
+    img{
+        width: 25px;
+        height: auto;
+    }
+}
+
+.btn{
+    border: unset;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 8px 16px;
+    background-color: $primaryColor;
+    color: #fff;
+    height: 66px;
+    cursor: pointer;
+    transition: $transitionDuration;
+    &:hover{
+        background-color: $secondaryColor;
+        transition: $transitionDuration;
+    }
+}

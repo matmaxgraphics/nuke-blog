@@ -1,0 +1,30 @@
+.input-field {
+  width: 100%;
+  padding: 8px;
+  height: 66px;
+  border: unset;
+  background-color: #f7f7f7;
+  color: #333;
+  font-size: 16px;
+  font-family: inherit;
+  &:focus {
+    border: 1px solid $primaryColor;
+  }
+}
+
+textarea{
+  width: 100%;
+  padding: 8px;
+  height: 200px;
+  border: unset;
+  background-color: #f7f7f7;
+  color: #333;
+  font-size: 16px;
+  font-family: inherit;
+  resize: none;
+}
+
+label{
+  margin-bottom: 8px;
+  display: block;
+}
