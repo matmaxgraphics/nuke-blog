@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import img4 from "../assets/img-4.png";
 import arrowIcon from "../assets/arrow-right.svg";
 
