@@ -9,6 +9,8 @@ import ContactForm from "./pages/contact";
 import AdminLoginForm from "./admin/admin-login";
 import CreatePost from "./admin/posts/create";
 import ManagePost from "./admin/posts/index";
+import CreateCategory from "./admin/categories/create-category";
+import ManageCategory from "./admin/categories/index-category";
 // import './index.css'
 
 const router = createBrowserRouter([
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
   {
     path: "admin-panel/manage-post",
     element: <ManagePost />,
+  },
+  {
+    path: "admin-panel/create-category",
+    element: <CreateCategory />,
+  },
+  {
+    path: "admin-panel/manage-category",
+    element: <ManageCategory />,
   },
 ]);
 

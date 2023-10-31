@@ -28,19 +28,19 @@ const AdminLoginForm = () => {
                 name="pword"
                 className="input-field"
                 placeholder="Input your password"
-                
                 required
               />
             </div>
-            <button type="submit" className="btn">
-              Login to Panel
-            </button>
+            <Link to="/admin-panel/create-post">
+              <button type="submit" className="btn">
+                Login to Panel
+              </button>
+            </Link>
           </form>
         </main>
       </section>
     </>
   );
 };
-
 
 export default AdminLoginForm;
