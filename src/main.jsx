@@ -11,6 +11,8 @@ import CreatePost from "./admin/posts/create";
 import ManagePost from "./admin/posts/index";
 import CreateCategory from "./admin/categories/create-category";
 import ManageCategory from "./admin/categories/index-category";
+import ManageUser from "./admin/users/index-user";
+import CreateUser from "./admin/users/create-user";
 // import './index.css'
 
 const router = createBrowserRouter([
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
   {
     path: "admin-panel/manage-category",
     element: <ManageCategory />,
+  },
+  {
+    path: "admin-panel/manage-users",
+    element: <ManageUser />,
+  },
+  {
+    path: "admin-panel/create-user",
+    element: <CreateUser />,
   },
 ]);
 
