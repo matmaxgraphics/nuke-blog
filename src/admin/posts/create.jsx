@@ -22,7 +22,7 @@ const CreatePost = function () {
           </Link>
           <ul className="sidebar-content">
             <li>
-              <a href="">Manage Posts</a>
+              <Link to="/admin-panel/manage-post">Manage Posts</Link>
             </li>
             <li>
               <a href="">Manage Categories</a>
@@ -49,13 +49,13 @@ const CreatePost = function () {
 
           <div className="button-group">
             <h4>Add Post</h4>
-            <Link to="/admin-panel/create-post" className="link-btn">
+            <Link to="/admin-panel/manage-post" className="link-btn">
               Manage posts
             </Link>
           </div>
 
           <div className="content">
-            <h2 className="page-title">Manage Post</h2>
+            <h2 className="page-title">Create Post</h2>
             <form>
               <div>
                 <label>Blog Title</label>

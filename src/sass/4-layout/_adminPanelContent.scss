@@ -81,6 +81,8 @@
   .content {
     margin-top: 48px;
     padding: 0 24px;
+    max-width: 1200px;
+    margin: auto;
     h2 {
       text-align: center;
     }
@@ -88,9 +90,8 @@
       display: flex;
       flex-direction: column;
       gap: 24px;
-      max-width: 1000px;
-      margin: auto;
-      label{
+
+      label {
         margin-bottom: 8px;
       }
       .btn-wrap {
@@ -143,4 +144,29 @@
     width: calc(100% - 10px);
     left: 10px;
   }
+}
+
+
+table{
+	width: 100%;
+	border-collapse: collapse;
+	font-size: inherit;
+    margin-top: 48px;
+}
+th, td{
+	padding: 15px;
+	text-align: left;
+	border-bottom: 1px solid $grey-03;
+}
+.edit{
+	color: green;
+}
+.delete{
+	color: red;
+}
+.publish{
+	color: blue;
+}
+.edit:hover, .delete:hover, .publish:hover{
+	text-decoration: underline;
 }

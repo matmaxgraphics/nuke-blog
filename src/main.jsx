@@ -8,6 +8,7 @@ import ArticlesPage from "./pages/articles";
 import ContactForm from "./pages/contact";
 import AdminLoginForm from "./admin/admin-login";
 import CreatePost from "./admin/posts/create";
+import ManagePost from "./admin/posts/index";
 // import './index.css'
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "admin-panel/create-post",
     element: <CreatePost />,
+  },
+  {
+    path: "admin-panel/manage-post",
+    element: <ManagePost />,
   },
 ]);
 
