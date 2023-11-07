@@ -128,7 +128,7 @@
 
 @media (max-width: 1240px) {
   .sidebar {
-    width: 20px;
+    width: 0px;
     display: none;
   }
   .sidebar.active {
@@ -141,8 +141,8 @@
     width: calc(100% - 220px);
   }
   .admin-content {
-    width: calc(100% - 10px);
-    left: 10px;
+    width: calc(100% - 0px);
+    left: 0px;
   }
 }
 
