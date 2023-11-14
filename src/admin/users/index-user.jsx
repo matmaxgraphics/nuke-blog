@@ -13,7 +13,7 @@ const ManageUser = function () {
       </div>
 
       <div className="content">
-        <table>
+        {/* <table>
           <thead>
             <th>S/N</th>
             <th>Username</th>
@@ -22,20 +22,21 @@ const ManageUser = function () {
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td>Matmax</td>
-              <td>Admin</td>
-              <td>
-                <a href="#" class="edit">
+              <td data-label="S/N">1</td>
+              <td data-label="Username">Matmax</td>
+              <td data-label="Role">Admin</td>
+              <td data-label="Action">
+                <a href="#" className="edit">
                   edit
                 </a>
               </td>
-              <td>
-                <a href="#" class="delete">
+              <td data-label="Action">
+                <a href="#" className="delete">
                   delete
                 </a>
               </td>
             </tr>
+
             <tr>
               <td>2</td>
               <td>Ejoke</td>
@@ -49,6 +50,31 @@ const ManageUser = function () {
                 <a href="#" class="delete">
                   delete
                 </a>
+              </td>
+            </tr>
+          </tbody>
+        </table> */}
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">S/N</th>
+              <th scope="col">Username</th>
+              <th scope="col">Role</th>
+              <th scope="col" colspan="2">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="S/N">1</td>
+              <td data-label="Username">Matmax</td>
+              <td data-label="Role">Admin</td>
+              <td data-label="Action">
+                <a href="#" className="edit">edit</a>
+              </td>
+              <td>
+                <a href="#" className="delete">delete</a>
               </td>
             </tr>
           </tbody>

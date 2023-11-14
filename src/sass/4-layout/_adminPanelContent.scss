@@ -99,6 +99,30 @@
         margin-top: 24px;
       }
     }
+    .blog-cards--wrapper {
+      row-gap: 48px;
+      .edit {
+        color: #fff;
+        background: $primaryColor;
+        &:hover {
+          background-color: #333;
+          text-decoration: underline;
+        }
+      }
+    }
+    .card--info {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+      div {
+        background-color: #f1fbea;
+        padding: 8px;
+        font-size: 16px;
+      }
+    }
+    .btn-group {
+      margin-top: 24px;
+    }
   }
 
   input[type="file"]::-webkit-file-upload-button {
@@ -146,27 +170,77 @@
   }
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: inherit;
+  margin-top: 48px;
+  thead {
+    font-weight: 500;
+  }
+}
 
-table{
-	width: 100%;
-	border-collapse: collapse;
-	font-size: inherit;
-    margin-top: 48px;
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid $grey-03;
 }
-th, td{
-	padding: 15px;
-	text-align: left;
-	border-bottom: 1px solid $grey-03;
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  table {
+    border: 0;
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  }
+  tr {
+    display: block;
+    margin-bottom: 48px;
+  }
+  td {
+    border-bottom: 1px solid $grey-03;
+    display: block;
+    text-align: right;
+  }
+  td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  td:last-child {
+    border-bottom: 0;
+  }
 }
-.edit{
-	color: green;
+.edit {
+  color: $primaryColor;
+  font-weight: 600;
 }
-.delete{
-	color: red;
+.delete {
+  color: red;
+  font-weight: 600;
+  background-color: transparent;
+  transition: $transitionDuration;
 }
-.publish{
-	color: blue;
+.publish {
+  color: blue;
+  font-weight: 600;
+  background-color: transparent;
+  transition: $transitionDuration;
 }
-.edit:hover, .delete:hover, .publish:hover{
-	text-decoration: underline;
+.edit:hover,
+.delete:hover,
+.publish:hover {
+  text-decoration: underline;
+  background-color: transparent;
+  transition: $transitionDuration;
 }
