@@ -13,6 +13,8 @@ import CreateCategory from "./admin/categories/create-category";
 import ManageCategory from "./admin/categories/index-category";
 import ManageUser from "./admin/users/index-user";
 import CreateUser from "./admin/users/create-user";
+import Test from "./pages/test";
+import Users from "./components/Users";
 // import './index.css'
 
 const router = createBrowserRouter([
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "single-article",
+    path: `single-article/:id`,
     element: <SingleArticlePage />,
   },
   {
@@ -60,6 +62,14 @@ const router = createBrowserRouter([
   {
     path: "admin-panel/create-user",
     element: <CreateUser />,
+  },
+  {
+    path: "test",
+    element: <Test />,
+  },
+  {
+    path: "api-test",
+    element: <Users />,
   },
 ]);
 
