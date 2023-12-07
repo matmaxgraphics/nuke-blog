@@ -15,6 +15,7 @@ import ManageUser from "./admin/users/index-user";
 import CreateUser from "./admin/users/create-user";
 import Test from "./pages/test";
 import Users from "./components/Users";
+import CustomDropdown from "./pages/CustomDropdown";
 // import './index.css'
 
 const router = createBrowserRouter([
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
   {
     path: "api-test",
     element: <Users />,
+  },
+  {
+    path: "dropdown-test",
+    element: <CustomDropdown />,
   },
 ]);
 
