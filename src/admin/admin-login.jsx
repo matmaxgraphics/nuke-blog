@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import {
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
-import auth from "../firebase";
+import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import nukeLogo from "../assets/nuke-logo.png";
 import AdminNavbar from "../components/admin-navbar";
 
 const AdminLoginForm = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -28,17 +24,29 @@ const AdminLoginForm = () => {
     setErrorMessage(null);
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      console.log("sign in successful");
+      const response = await axios.post(
+        "https://nukeapi.pythonanywhere.com/api/dj-rest-auth/login/",
+        {
+          username,
+          password,
+        }
+      );
+
+      console.log("sign in successful", response.data.key);
+      localStorage.setItem('adminToken', response.data.key);
+      setIsLoading(false);
 
       navigateTo("/admin-panel/manage-post");
     } catch (error) {
-      console.error("sign-in error", error.message);
-      setErrorMessage(
-        "Invalid email or password, please check your details and try again"
-      );
+      if (error.response) {
+        console.error("server responded:", error.response);
+        setErrorMessage(
+          "Invalid username or password, please check your details and try again"
+        );
+      } else {
+        console.error("sign-in error", error.message);
+      }
 
-      setIsLoading(false);
     }
   };
 
@@ -60,14 +68,14 @@ const AdminLoginForm = () => {
         <main className="form-field">
           <form className="contact-form">
             <div>
-              <label>Email</label>
+              <label>Username</label>
               <input
-                type="email"
-                name="email"
+                type="text"
+                name="username"
                 className="input-field"
-                placeholder="email@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </div>

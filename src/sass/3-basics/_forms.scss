@@ -38,6 +38,9 @@ label {
   color: $grey-01;
   transition: $transitionDuration;
   cursor: pointer;
+  margin-left: auto;
+  width: min-content;
+
   &:hover {
     color: $grey-03;
     transition: $transitionDuration;

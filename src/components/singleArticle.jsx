@@ -1,41 +1,56 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import useFetchData from "./useFetchData";
+import { useParams, Link } from "react-router-dom";
+import useFetchData from "./HttpRequests/useFetchData";
 import newsImage1 from "../assets/news-img1.png";
 import articleImg from "../assets/article-img.png";
 
 const SingleArticle = () => {
-  const { id } = useParams();
-  const {data} = useFetchData(`https://jsonplaceholder.typicode.com/posts/${id}`)
+  const { slug } = useParams();
+  const { data } = useFetchData(
+    `https://nukeapi.pythonanywhere.com/api/posts/${slug}`
+  );
 
-  if(!data) {
-    return <div>Loading...</div>
+  const formatDate = (dateString) => {
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    const formattedDate = new Date(dateString).toLocaleDateString(
+      "en-US",
+      options
+    );
+    return formattedDate;
+  };
+
+  if (!data) {
+    return <div>Loading...</div>;
   }
   return (
     <main className="post--wrapper">
-      <PostBreadcrumb />
-      <PostHeader title={data.title} date="4th January, 2023"/>
-      <PostBodyContent body={data.body}/>
+      <PostBreadcrumb category={data.category.name} />
+      <PostHeader
+        title={data.title}
+        date={formatDate(data.created_at)}
+        image={data.image}
+      />
+      <PostBodyContent body={data.body} />
       <ArticleSharing />
     </main>
   );
 };
 
-const PostBreadcrumb = () => {
+const PostBreadcrumb = ({ category }) => {
   return (
     <section className="breadcrumb-container max-width">
       <article className="breadcrumb--wrapper">
         <span>
-          <a href="">Home / </a>
+          <Link to="/">Home / </Link>
         </span>
         <span>
-          <a href="">Lifestyle</a>
+          <a href="">{category}</a>
         </span>
       </article>
     </section>
   );
 };
-const PostHeader = ({title, date}) => {
+const PostHeader = ({ title, date, image }) => {
   return (
     <section className="banner--container section-flex max-width">
       <article className="text-description">
@@ -49,13 +64,13 @@ const PostHeader = ({title, date}) => {
       </article>
 
       <article className="img-container">
-        <img src={newsImage1} alt="" />
+        <img src={image} alt="" />
       </article>
     </section>
   );
 };
 
-const PostBodyContent = ({body}) => {
+const PostBodyContent = ({ body }) => {
   return (
     <section className="article-container max-width_1200">
       <div>{body}</div>

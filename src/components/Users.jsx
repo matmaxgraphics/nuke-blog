@@ -1,5 +1,5 @@
 import React from "react";
-import useFetchData from "./useFetchData";
+import useFetchData from "./HttpRequests/useFetchData";
 
 function Users() {
   const { data } = useFetchData("https://jsonplaceholder.typicode.com/posts");

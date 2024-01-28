@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PanelMainLayout from "../../layout/PanelMainLayout";
+import usePostRequest from "../../components/HttpRequests/usePostRequest";
+import axios from "axios";
+
+
+const adminToken = localStorage.getItem("adminToken");
+
 
 const CreateCategory = function () {
+
   return (
     <PanelMainLayout>
       <div className="button-group">
